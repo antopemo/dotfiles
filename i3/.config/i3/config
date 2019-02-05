@@ -214,8 +214,8 @@ exec subl
 #exec konsole
 
 exec_always --no-startup-id feh --bg-scale /home/antopemo/Pictures/wallpaper.jpg
-exec_always compton -f
-exec_always killall -q notify-osd
+exec_always --no-startup-id compton -f
+exec_always --no-startup-id killall -q notify-osd
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 #exec_always nm-applet
 
@@ -226,7 +226,7 @@ exec_always --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolb
 
 assign [class="Spotify"] $ws10
 for_window [class="Spotify"] move to workspace $ws10
-assign [class="Firefox"] $ws1
+#assign [class="Firefox"] $ws1
 assign [class="Sublime_text"] $ws3
 assign [class="konsole"] $ws2
 assign [class="Thunderbird"] $ws5
@@ -237,8 +237,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
